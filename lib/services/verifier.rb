@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../prodamus'
+
 module Prodamus
   # HMAC encoding and verify signature
   class Verifier
@@ -11,8 +13,8 @@ module Prodamus
       @algorithm = algorithm
     end
 
-    def verify
-      encoded_data = encode(@data, @key, @algorithm)
+    def verify(sign)
+      encoded_data = encode
 
       encoded_data && (encoded_data == sign)
     end
@@ -22,6 +24,8 @@ module Prodamus
       digest = OpenSSL::Digest.new(@algorithm)
 
       OpenSSL::HMAC.hexdigest(digest, @key, data)
+    rescue NoMethodError
+      raise ArgumentError, error: 'Expected a Hash with array of hashes.'
     end
 
     private

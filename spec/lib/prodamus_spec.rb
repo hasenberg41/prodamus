@@ -10,10 +10,10 @@ describe Prodamus do
   end
 
   describe 'parameters' do
-    context 'access_token' do
-      it 'set access_token' do
-        expect(described_class).to receive('access_token=').with('ABOBA')
-        described_class.access_token = 'ABOBA'
+    context 'secret_key' do
+      it 'set secret_key' do
+        expect(described_class).to receive('secret_key=').with('ABOBA')
+        described_class.secret_key = 'ABOBA'
       end
     end
 

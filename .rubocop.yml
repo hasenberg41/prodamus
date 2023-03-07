@@ -4,3 +4,8 @@ require:
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - 'spec/lib/**/*.rb'

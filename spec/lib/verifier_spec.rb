@@ -4,6 +4,8 @@ require 'spec_helper'
 
 describe Prodamus::Verifier do
   let(:verifier) { described_class.new(data, key) }
+  let(:data) { { b: [{ l: 's', a: 123, r: 'sd' }], f: 'F', a: 228 } }
+  let(:key) { 'velikiy sup navaril' }
 
   it 'created' do
     obj = described_class.new('dawn', 'gavrik')
@@ -14,5 +16,28 @@ describe Prodamus::Verifier do
   end
 
   describe 'encode' do
+    subject { verifier.encode }
+
+    it 'should encode' do
+      expect(subject.class).to eq String
+    end
+  end
+
+  describe 'verify' do
+    subject { verifier.verify(sign) }
+    let(:sign) { verifier.encode }
+
+    it 'should return true' do
+      expect(subject).to eq true
+    end
+
+    context 'amogus signature' do
+      subject { verifier.verify(sign) }
+      let(:sign) { described_class.new(data, 'AMOGUS').encode }
+
+      it 'should return true' do
+        expect(subject).to eq false
+      end
+    end
   end
 end
