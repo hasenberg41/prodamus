@@ -9,12 +9,12 @@ Gem::Specification.new do |spec|
   spec.email = ['hasenberg41@mail.ru']
   spec.summary = 'Prodamus purchases integration for Ruby on Rails'
   spec.description = 'This gem allows to integrate Prodamus purchases service in your Rails app or simple Ruby app.'
-  spec.homepage = '' # TODO
+  spec.homepage = 'https://github.com/hasenberg41/prodamus'
   spec.license = 'MIT'
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.7.0'
 
-  spec.files = Dir[] # TODO
+  spec.files = Dir[File.join('lib', '**', '*')]
 
   spec.extra_rdoc_files = ['README.md']
 
