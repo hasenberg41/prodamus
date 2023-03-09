@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://testdemo.payform.ru/?available_payment_methods=AC%7CACkz%7CACkztjp%7CACf%7CACeuruk%7CACusduk%7CACEURNMBX%7CACUSDNMBX%7CSBP%7CPC%7CQW%7CGP%7Csbol%7Cinvoice&callbackType=json&do=link&installments_disabled=1&order_id=123&payments_limit=1&products%5B%5D%5Bname%5D=nger&products%5B%5D%5Bprice%5D=228000&products%5B%5D%5Bquantity%5D=1&products%5B%5D%5Bsku%5D=1223
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - text/plain
+      Charset:
+      - utf-8
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 09 Mar 2023 12:03:02 GMT
+      Content-Type:
+      - text/html; charset=WINDOWS-1251
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - referer=YTozOntzOjM6InVybCI7czowOiIiO3M6Mzoic3lzIjtzOjA6IiI7czozOiJrd2QiO3M6MDoiIjt9;
+        expires=Sat, 09-Mar-2024 12:03:02 GMT; Max-Age=31622400; path=/
+      - session=n6apoj7t6uvkre3kgdf3kf9eh2; expires=Thu, 16-Mar-2023 12:03:02 GMT;
+        Max-Age=604800; path=/
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: https://payform.ru/nh1JPWE/
+  recorded_at: Thu, 09 Mar 2023 12:02:59 GMT
+recorded_with: VCR 6.1.0

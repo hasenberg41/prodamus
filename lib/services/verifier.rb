@@ -5,7 +5,7 @@ require_relative '../prodamus'
 module Prodamus
   # HMAC encoding and verify signature
   class Verifier
-    attr_reader :data, :key, :algorithm
+    attr_accessor :data, :key, :algorithm
 
     def initialize(data, key, algorithm = 'sha256')
       @data = data
@@ -15,7 +15,6 @@ module Prodamus
 
     def verify(sign)
       encoded_data = encode
-
       encoded_data && (encoded_data == sign)
     end
 
@@ -25,7 +24,7 @@ module Prodamus
 
       OpenSSL::HMAC.hexdigest(digest, @key, data)
     rescue NoMethodError
-      raise ArgumentError, error: 'Expected a Hash with array of hashes.'
+      raise ArgumentError, 'Expected a Hash with array of hashes.'
     end
 
     private

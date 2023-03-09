@@ -21,6 +21,14 @@ describe Prodamus::Verifier do
     it 'should encode' do
       expect(subject.class).to eq String
     end
+
+    context 'invalid data' do
+      let(:data) { 'kukaracha' }
+
+      it 'raise error' do
+        expect { subject }.to raise_error(ArgumentError, 'Expected a Hash with array of hashes.')
+      end
+    end
   end
 
   describe 'verify' do
