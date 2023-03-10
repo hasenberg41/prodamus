@@ -40,13 +40,13 @@ module Prodamus
 
     # configure the payload to receive the payment form
     def link_config(&block)
-      @link_config ||= LinkConfig.new(&block)
+      @link_config = LinkConfig.new(&block)
     end
 
     def verifier(data, algorithm = 'sha256')
       raise 'Missing secret_key.' if @secret_key.nil?
 
-      @verifier ||= Verifier.new(data, @secret_key, algorithm)
+      @verifier = Verifier.new(data, @secret_key, algorithm)
     end
   end
 end
